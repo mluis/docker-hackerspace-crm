@@ -17,9 +17,14 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update && \
 	echo "mysql-server mysql-server/root_password password" | debconf-set-selections && \
 	echo "mysql-server mysql-server/root_password_again password" | debconf-set-selections && \
-	apt-get -y install mysql-server php5-fpm php5-mysql nginx
+	apt-get -y install mysql-server php5-fpm php5-mysql nginx wget unzip
 
-COPY seltzer-master/crm  /usr/share/nginx/html/crm
+# COPY seltzer-master/crm  /usr/share/nginx/html/crm
+
+RUN wget https://github.com/elplatt/seltzer/archive/master.zip && \
+	unzip master.zip && \
+	rm -rf master.zip && \
+	mv seltzer-master/crm /usr/share/nginx/html/
 
 # Configuration
 RUN echo "\ndaemon off;" >> /etc/nginx/nginx.conf && \
