@@ -6,3 +6,5 @@ Automated build of the Seltzer Hackerspace CRM.
 How to: 
   - docker run -p 80:80 --name crm -d mluis/hackerspace-crm
   - docker exec crm mysql -uroot --password='' -e "create database hackaveiro"
+
+Open a web browser and navigate to install.php in the crm directory. Example: http://yourserver.com/crm/install.php
