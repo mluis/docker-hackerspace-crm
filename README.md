@@ -9,4 +9,3 @@ How to:
 
 Open a web browser and navigate to install.php in the crm directory. Example: http://yourserver.com/crm/install.php
 
-[![gitcheese.com](https://s3.amazonaws.com/gitcheese-ui-master/images/badge.svg)](https://www.gitcheese.com/donate/users/162384/repos/43731089)
